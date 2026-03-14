@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedCare | Your Premium Health Partner</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-heart-pulse"></i>
+                MedCare
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="bed.html">Bed Status</a></li>
+                <li><a href="#symptom-checker">Symptom Checker</a></li>
+                <li><a href="#report-analysis">Report Analysis</a></li>
+                <li><a href="#billing">Billing</a></li>
+                <li><a href="#appointment" class="btn btn-primary" style="padding: 0.5rem 1rem; margin-left: 1rem;">Book
+                        Appointment</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content reveal">
+                <h1>Healthcare that puts <span>You First</span></h1>
+                <p>Experience world-class medical facilities, expert specialists, and compassionate care designed for
+                    your fast recovery and well-being.</p>
+                <div class="hero-buttons">
+                    <a href="#appointment" class="btn btn-primary">Book Appointment</a>
+                    <a href="#symptom-checker" class="btn btn-outline">Check Symptoms</a>
+                </div>
+            </div>
+
+            <div class="hero-image reveal">
+                <!-- Fallback gradient if no image is available, but assuming abstract illustration -->
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    alt="Modern Hospital Facilities">
+
+                <div class="floating-card fc-1">
+                    <div class="floating-icon"><i class="fa-solid fa-user-doctor"></i></div>
+                    <div>
+                        <strong>100+</strong>
+                        <div style="font-size: 0.875rem; color: var(--text-muted)">Specialists</div>
+                    </div>
+                </div>
+
+                <div class="floating-card fc-2">
+                    <div class="floating-icon"><i class="fa-solid fa-truck-medical"></i></div>
+                    <div>
+                        <strong>24/7</strong>
+                        <div style="font-size: 0.875rem; color: var(--text-muted)">Emergency</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="text-center reveal">
+                <h2 class="section-title">Our Medical Services</h2>
+                <p class="section-subtitle">We provide a wide range of specialized medical services with
+                    state-of-the-art technology and compassionate care.</p>
+            </div>
+
+            <div class="services-grid reveal">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-stethoscope"></i></div>
+                    <h3>General Medicine</h3>
+                    <p style="color: var(--text-muted);">Comprehensive care for common ailments and preventive
+                        healthcare.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h3>Cardiology</h3>
+                    <p style="color: var(--text-muted);">Expert diagnosis and treatment for all heart-related
+                        conditions.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-tooth"></i></div>
+                    <h3>Dental Care</h3>
+                    <p style="color: var(--text-muted);">Advanced dental treatments ensuring a healthy and bright smile.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-bone"></i></div>
+                    <h3>Orthopedics</h3>
+                    <p style="color: var(--text-muted);">Specialized care for bones, joints, ligaments, and muscle
+                        conditions.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-eye"></i></div>
+                    <h3>Ophthalmology</h3>
+                    <p style="color: var(--text-muted);">Comprehensive eye care spanning from vision tests to surgeries.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Neurology</h3>
+                    <p style="color: var(--text-muted);">Expert care for nervous system disorders and brain health.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="section doctors" id="doctors">
+        <div class="container">
+            <div class="text-center reveal">
+                <h2 class="section-title">Meet Our Specialists</h2>
+                <p class="section-subtitle">Our team consists of highly qualified, experienced, and compassionate
+                    medical professionals.</p>
+            </div>
+
+            <div class="doctors-grid reveal">
+                <div class="doctor-card">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        alt="Dr. Sarah Jenkins" class="doctor-img">
+                    <div class="doctor-info">
+                        <div class="doctor-name">Dr. Sarah Jenkins</div>
+                        <div class="doctor-specialty">Cardiologist</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">15+ years of experience in
+                            cardiovascular interventions.</p>
+                    </div>
+                </div>
+
+                <div class="doctor-card">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        alt="Dr. Michael Chen" class="doctor-img">
+                    <div class="doctor-info">
+                        <div class="doctor-name">Dr. Michael Chen</div>
+                        <div class="doctor-specialty">Neurologist</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Expert in complex neurological disorders
+                            and treatments.</p>
+                    </div>
+                </div>
+
+                <div class="doctor-card">
+                    <img src="https://images.unsplash.com/photo-1594824432258-2931a74d5b2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        alt="Dr. Emily Patel" class="doctor-img">
+                    <div class="doctor-info">
+                        <div class="doctor-name">Dr. Emily Patel</div>
+                        <div class="doctor-specialty">Pediatrician</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Dedicated to providing comprehensive
+                            care for children.</p>
+                    </div>
+                </div>
+
+                <div class="doctor-card">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        alt="Dr. James Wilson" class="doctor-img">
+                    <div class="doctor-info">
+                        <div class="doctor-name">Dr. James Wilson</div>
+                        <div class="doctor-specialty">Orthopedic Surgeon</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Specializing in joint replacement and
+                            sports injuries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- AI Symptom Checker -->
+    <section class="section symptom-checker" id="symptom-checker">
+        <div class="container reveal">
+            <div class="text-center">
+                <h2 class="section-title">AI Symptom Checker</h2>
+                <p class="section-subtitle">Not sure which doctor to see? Enter your symptoms below and our smart
+                    assistant will recommend the right specialist for you.</p>
+            </div>
+
+            <div class="sc-container">
+                <div class="sc-input-group">
+                    <input type="text" id="symptomInput" class="sc-input"
+                        placeholder="E.g., I have a severe toothache and fever...">
+                    <button id="checkSymptomsBtn" class="btn btn-accent">Analyze Symptoms</button>
+                </div>
+
+                <div class="sc-result" id="symptomResult">
+                    <!-- Results populated by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Report Analysis Section -->
+    <section class="section report-analysis" id="report-analysis">
+        <div class="container reveal">
+            <div class="text-center">
+                <h2 class="section-title">AI Report Analysis</h2>
+                <p class="section-subtitle">Upload your medical report and let our advanced AI simplify the terminology
+                    into plain English, highlight key findings, and recommend the right specialist.</p>
+            </div>
+
+            <div class="ra-container">
+                <div class="ra-upload-area" id="dropArea">
+                    <i class="fa-solid fa-cloud-arrow-up ra-upload-icon"></i>
+                    <h3>Upload Medical Report</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Drag and drop your PDF or image here, or
+                        paste your report text below.</p>
+                    <input type="file" id="reportFile" hidden accept=".pdf,.doc,.docx,.jpg,.png">
+                    <button class="btn btn-outline" onclick="document.getElementById('reportFile').click()">Browse
+                        Files</button>
+
+                    <div class="ra-divider"><span>OR</span></div>
+
+                    <textarea id="reportText" class="ra-textarea"
+                        placeholder="Paste your medical report text here for instant analysis..."></textarea>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button id="analyzeReportBtn" class="btn btn-primary"
+                        style="padding: 1rem 3rem; font-size: 1.1rem;">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Analyze Report
+                    </button>
+                </div>
+
+                <!-- Analysis Results (Hidden by default) -->
+                <div class="ra-results premium-result-card" id="analysisResults" style="display: none;">
+                    <div class="result-header">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3
+                                style="font-size: 1.5rem; color: var(--primary); display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fa-solid fa-file-medical"></i> Analysis Summary
+                            </h3>
+                            <span class="ra-badge ra-badge-warning" id="urgencyBadge">Review Next Week</span>
+                        </div>
+                    </div>
+
+                    <div class="ra-grid">
+                        <div class="ra-card bg-light">
+                            <h4
+                                style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; color: var(--secondary);">
+                                <i class="fa-solid fa-language text-primary"></i> Plain English Summary
+                            </h4>
+                            <p id="plainSummary" style="color: var(--text-muted); font-size: 0.95rem;">
+                                <!-- Populated by JS -->
+                            </p>
+                        </div>
+
+                        <div class="ra-card bg-light">
+                            <h4
+                                style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; color: var(--secondary);">
+                                <i class="fa-solid fa-list-check text-primary"></i> Key Findings
+                            </h4>
+                            <ul id="keyFindings"
+                                style="color: var(--text-muted); font-size: 0.95rem; padding-left: 1.25rem;">
+                                <!-- Populated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ra-card mt-2 bg-gradient">
+                        <h4
+                            style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; color: var(--secondary);">
+                            <i class="fa-solid fa-user-doctor text-primary"></i> Recommended Next Steps
+                        </h4>
+                        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                            <div style="flex: 1; min-width: 250px;">
+                                <p id="nextSteps" style="color: var(--text-muted); font-size: 0.95rem;">
+                                    <!-- Populated by JS -->
+                                </p>
+                            </div>
+                            <div
+                                style="background: var(--surface); padding: 1rem; border-radius: 0.75rem; border: 1px solid var(--border-color); text-align: center; min-width: 180px;">
+                                <div
+                                    style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; margin-bottom: 0.25rem;">
+                                    Recommended Dept</div>
+                                <div id="recDepartment"
+                                    style="color: var(--primary); font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem;">
+                                    General Medicine</div>
+                                <a href="#appointment" class="btn btn-primary"
+                                    style="padding: 0.4rem 1rem; font-size: 0.85rem; width: 100%;">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Live Bed Availability Section -->
+    <section class="section" id="bed-status" style="background-color: var(--white);">
+        <div class="container reveal">
+            <div class="text-center" style="margin-bottom: 3rem;">
+                <div
+                    style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--primary-light); color: var(--primary); padding: 0.5rem 1rem; border-radius: 2rem; font-weight: 600; margin-bottom: 1rem; font-size: 0.875rem;">
+                    <span class="live-dot"></span> Live Status
+                </div>
+                <h2 class="section-title">Hospital Bed Availability</h2>
+                <p class="section-subtitle">Real-time updates on bed availability across our specialized departments.
+                </p>
+            </div>
+
+            <div class="bed-grid">
+                <!-- ICU -->
+                <div class="bed-card">
+                    <div class="bed-card-header">
+                        <div class="bed-icon" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;"><i
+                                class="fa-solid fa-heart-pulse"></i></div>
+                        <h3>Intensive Care (ICU)</h3>
+                    </div>
+                    <div class="bed-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Total Beds</span>
+                            <span class="stat-value">45</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Available</span>
+                            <span class="stat-value highlight-red" id="icu-available">4</span>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 91%; background-color: #ef4444;"></div>
+                    </div>
+                    <div class="bed-status-text">High Occupancy</div>
+                </div>
+
+                <!-- General Ward -->
+                <div class="bed-card">
+                    <div class="bed-card-header">
+                        <div class="bed-icon" style="background: rgba(34, 197, 94, 0.1); color: #22c55e;"><i
+                                class="fa-solid fa-bed"></i></div>
+                        <h3>General Ward</h3>
+                    </div>
+                    <div class="bed-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Total Beds</span>
+                            <span class="stat-value">150</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Available</span>
+                            <span class="stat-value highlight-green" id="general-available">42</span>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 72%; background-color: #22c55e;"></div>
+                    </div>
+                    <div class="bed-status-text">Available</div>
+                </div>
+
+                <!-- Maternity -->
+                <div class="bed-card">
+                    <div class="bed-card-header">
+                        <div class="bed-icon" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;"><i
+                                class="fa-solid fa-baby"></i></div>
+                        <h3>Maternity Ward</h3>
+                    </div>
+                    <div class="bed-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Total Beds</span>
+                            <span class="stat-value">60</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Available</span>
+                            <span class="stat-value highlight-yellow" id="maternity-available">12</span>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 80%; background-color: #f59e0b;"></div>
+                    </div>
+                    <div class="bed-status-text">Moderate Occupancy</div>
+                </div>
+
+                <!-- Private Suites -->
+                <div class="bed-card">
+                    <div class="bed-card-header">
+                        <div class="bed-icon" style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6;"><i
+                                class="fa-solid fa-star"></i></div>
+                        <h3>Private Suites</h3>
+                    </div>
+                    <div class="bed-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Total Suites</span>
+                            <span class="stat-value">30</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Available</span>
+                            <span class="stat-value highlight-purple" id="private-available">8</span>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 73%; background-color: #8b5cf6;"></div>
+                    </div>
+                    <div class="bed-status-text">Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tech Hero Section -->
+    <section class="hero tech-hero" id="hero">
+        <div class="container">
+            <div class="hero-content reveal">
+                <div class="ra-badge ra-badge-success" style="margin-bottom: 1rem;"><i
+                        class="fa-solid fa-microchip"></i> Next-Gen Healthcare</div>
+                <h1>Intelligence meets <br><span>Compassionate Care</span></h1>
+                <p>Welcome to the future of medicine. Experience AI-driven diagnostics, real-time hospital management,
+                    and robotic-assisted treatments, all designed to optimize patient outcomes and streamline medical
+                    workflows.</p>
+                <div class="hero-buttons">
+                    <a href="#emergency-locations" class="btn btn-primary"
+                        style="background: linear-gradient(135deg, #ef4444, #b91c1c); box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4); border: none;">
+                        <i class="fa-solid fa-location-crosshairs"></i> Emergency Near Me
+                    </a>
+                    <a href="#symptom-checker" class="btn btn-outline">Try AI Diagnosis</a>
+                </div>
+            </div>
+
+            <div class="hero-image reveal">
+                <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    alt="Advanced Medical Technology">
+
+                <div class="floating-card fc-1" style="border-left: 4px solid var(--primary);">
+                    <div class="floating-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <div>
+                        <strong>AI Diagnostics</strong>
+                        <div style="font-size: 0.875rem; color: var(--text-muted)">99.8% Accuracy</div>
+                    </div>
+                </div>
+
+                <div class="floating-card fc-2" style="border-left: 4px solid var(--accent);">
+                    <div class="floating-icon"><i class="fa-solid fa-bed-pulse"></i></div>
+                    <div>
+                        <strong>Smart Sync</strong>
+                        <div style="font-size: 0.875rem; color: var(--text-muted)">Live Bed Tracking</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Nearby Locations Tracker -->
+    <section class="section" id="emergency-locations" style="background-color: var(--surface);">
+        <div class="container reveal">
+            <div class="text-center" style="margin-bottom: 3rem;">
+                <div class="ra-badge ra-badge-danger" style="margin-bottom: 1rem; animation: pulse-danger 2s infinite;">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Emergency Response
+                </div>
+                <h2 class="section-title">Locate Nearest Emergency Room</h2>
+                <p class="section-subtitle">In case of a medical emergency, find the closest specialized MedCare
+                    facility instantly. Our real-time tracker calculates the fastest route based on your current
+                    location.</p>
+            </div>
+
+            <div class="location-tracker-container premium-card">
+                <div class="location-search-bar">
+                    <button id="useMyLocation" class="btn btn-primary">
+                        <i class="fa-solid fa-location-dot"></i> Use My Location
+                    </button>
+                    <div style="flex: 1; position: relative;">
+                        <input type="text" id="citySearch" class="sc-input"
+                            placeholder="Or search by Zip Code or City (e.g., New York)..."
+                            style="width: 100%; border-color: var(--border-color); color: var(--text-main); background: var(--bg-color);">
+                        <button id="searchCityBtn" class="search-icon-btn"><i
+                                class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+
+                <div id="locationResults" class="location-results-grid" style="display: none; margin-top: 2.5rem;">
+                    <!-- Populated by JS -->
+                </div>
+
+                <!-- Placeholder Map Area -->
+                <div id="mapPlaceholder" class="map-placeholder mt-2">
+                    <div class="map-overlay">
+                        <i class="fa-solid fa-map-location-dot"
+                            style="font-size: 4rem; color: var(--text-muted); opacity: 0.5; margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--secondary);">Interactive Map Area</h3>
+                        <p style="color: var(--text-muted);">Allow location access or search to display nearby emergency
+                            rooms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="section" id="appointment">
+        <div class="container">
+            <div class="booking-section reveal">
+                <div class="booking-info">
+                    <h2>Book an Appointment</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">Skip the queue.
+                        Schedule your visit with our expert specialists precisely when you need it.</p>
+
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="color: var(--primary); font-size: 1.5rem;"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <strong>Call Us Available 24/7</strong>
+                            <div style="color: var(--text-muted);"> +91 96665 26665</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem;">
+                        <div style="color: var(--primary); font-size: 1.5rem;"><i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <strong>Location</strong>
+                            <div style="color: var(--text-muted);">Medicity, Banjara Hills, HC 4-45/67h/53</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-form">
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <label for="pName">Patient Name</label>
+                            <input type="text" id="pName" class="form-control" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="phn no">Contact</label>
+                            <input type="phone number" id="phn no" class="form-control" required
+                                placeholder="+91 XXXXX XXXXX">
+
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pEmail">Email Address</label>
+                            <input type="email" id="pEmail" class="form-control" required
+                                placeholder="john@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pDepartment">Department</label>
+                            <select id="pDepartment" class="form-control" required>
+                                <option value="" disabled selected>Select Department</option>
+                                <option value="General Medicine">General Medicine</option>
+                                <option value="Cardiology">Cardiology</option>
+                                <option value="Dental">Dental Care</option>
+                                <option value="Orthopedics">Orthopedics</option>
+                                <option value="Neurology">Neurology</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pDate">Appointment Date</label>
+                            <input type="date" id="pDate" class="form-control" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Confirm
+                            Booking</button>
+                    </form>
+                    <div id="formSuccessMessage"
+                        style="display: none; background: #dcfce7; color: #166534; padding: 1rem; border-radius: 0.5rem; margin-top: 1.5rem; text-align: center;">
+                        <i class="fa-solid fa-circle-check"></i> Appointment booked successfully! We will contact you
+                        soon.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Patient Billing Section -->
+
+    <section class="section" id="billing">
+        <div class="container">
+
+            <h2 class="section-title">Patient Billing & Discharge</h2>
+
+            <div class="booking-form">
+
+                <div class="form-group">
+                    <label>Patient Name</label>
+                    <input type="text" id="billName" class="form-control" placeholder="Enter patient name">
+                </div>
+
+                <div class="form-group">
+                    <label>Room Charge (₹)</label>
+                    <input type="number" id="roomCharge" class="form-control" placeholder="0" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label>Doctor Fee (₹)</label>
+                    <input type="number" id="doctorFee" class="form-control" placeholder="0" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label>Medicine Charge (₹)</label>
+                    <input type="number" id="medicineCharge" class="form-control" placeholder="0" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label>Lab Test Charge (₹)</label>
+                    <input type="number" id="labCharge" class="form-control" placeholder="0" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label>Nursing Charge (₹)</label>
+                    <input type="number" id="nursingCharge" class="form-control" placeholder="0" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label>Operation Charge (₹)</label>
+                    <input type="number" id="operationCharge" class="form-control" placeholder="0" min="0">
+                </div>
+
+                <button onclick="generateBill()" class="btn btn-primary">
+                    <i class="fa-solid fa-receipt"></i> Generate Bill
+                </button>
+
+                <button onclick="downloadBill()" class="btn btn-accent">
+                    <i class="fa-solid fa-download"></i> Download Bill
+                </button>
+
+                <button onclick="dischargePatient()" class="btn btn-outline">
+                    <i class="fa-solid fa-sign-out-alt"></i> Discharge Patient
+                </button>
+
+                <div id="billResult"></div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="logo" style="color: var(--white); margin-bottom: 1rem;">
+                        <i class="fa-solid fa-heart-pulse"></i> MedCare
+                    </h3>
+                    <p style="margin-bottom: 1.5rem; font-size: 0.9rem;">Providing premium healthcare services with
+                        advanced technology and expert professionals.</p>
+                    <div style="display: flex; gap: 1rem; font-size: 1.25rem;">
+                        <a href="#" style="color: var(--white);"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" style="color: var(--white);"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" style="color: var(--white);"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#doctors">Specialists</a></li>
+                        <li><a href="#appointment">Book Appointment</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Departments</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Cardiology</a></li>
+                        <li><a href="#">Neurology</a></li>
+                        <li><a href="#">Orthopedics</a></li>
+                        <li><a href="#">Dental Care</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Working Hours</h4>
+                    <ul class="footer-links" style="color: #9ca3af;">
+                        <li style="display: flex; justify-content: space-between;"><span>Mon - Fri:</span> <span>8:00 AM
+                                - 8:00 PM</span></li>
+                        <li style="display: flex; justify-content: space-between;"><span>Saturday:</span> <span>9:00 AM
+                                - 5:00 PM</span></li>
+                        <li style="display: flex; justify-content: space-between;"><span>Sunday:</span> <span>Emergency
+                                Only</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 MedCare Hospital. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+    <script src="symptomChecker.js"></script>
+    <script src="reportAnalysis.js"></script>
+    <script src="bedAvailability.js"></script>
+    <script src="booking.js"></script>
+    <script src="location.js"></script>
+    <script src="bill.js"></script>
+</body>
+
+</html>
