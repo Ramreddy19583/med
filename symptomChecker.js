@@ -1,4 +1,3 @@
-symptom.js
 const symptomsDatabase = [
     {
         keywords: ['fever', 'cold', 'cough', 'flu', 'headache', 'fatigue', 'tired', 'weak', 'body ache'],
@@ -44,9 +43,99 @@ const symptomsDatabase = [
     }
 ];
 
+const localizedStrings = {
+    enterSymptoms: {
+        'en-IN': 'Please enter your symptoms to get a recommendation.',
+        'hi-IN': 'कृपया सिफ़ारिश पाने के लिए अपने लक्षण दर्ज करें।',
+        'te-IN': 'దయచేసి మీ లక్షణాలను నమోదు చేసి సిఫార్సు పొందండి.'
+    },
+    fallback: {
+        'en-IN': "We couldn't perfectly match your symptoms to a specialty. A General Physician is the best person to consult first.",
+        'hi-IN': 'हम आपके लक्षणों को किसी विशेष विशेषज्ञता से पूरी तरह मेल नहीं कर पाए। सबसे पहले एक जनरल फिजिशियन से परामर्श करना सबसे अच्छा है।',
+        'te-IN': 'మేము మీ లక్షణాలను ప్రత్యేక విభాగానికి పూర్తిగా అనుకూలంగా కనుగొనలేకపోయాము. మొదటగా జనరల్ ఫిజిషియన్ ను సంప్రదించడం ఉత్తమం.'
+    },
+    recommendation: {
+        'en-IN': 'Based on your symptoms, we recommend consulting a',
+        'hi-IN': 'आपके लक्षणों के आधार पर, हम सलाह देते हैं कि आप से परामर्श लें',
+        'te-IN': 'మీ లక్షణాల ఆధారంగా, మేము సంప్రదించడానికి సిఫార్సు చేస్తున్నాము'
+    }
+};
+
+function getLocalizedString(key, lang) {
+    if (!lang) lang = (window.getResponseLanguage ? window.getResponseLanguage() : 'en-IN');
+    const bucket = localizedStrings[key];
+    return (bucket && bucket[lang]) ? bucket[lang] : bucket['en-IN'];
+}
+
+function speakMessage(text, lang) {
+    if (!text) return;
+    if (!lang) lang = (window.getResponseLanguage ? window.getResponseLanguage() : 'en-IN');
+    if (typeof window.speakText === 'function') {
+        window.speakText(text, lang);
+    }
+}
+
 const symptomInput = document.getElementById('symptomInput');
 const checkBtn = document.getElementById('checkSymptomsBtn');
 const resultContainer = document.getElementById('symptomResult');
+const micBtn = document.getElementById('scMicBtn');
+
+// Initialize Speech Recognition
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+let recognition = null;
+let isRecording = false;
+
+if (SpeechRecognition) {
+    recognition = new SpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = false;
+
+    recognition.onstart = function() {
+        isRecording = true;
+        if(micBtn) micBtn.classList.add('listening');
+        symptomInput.placeholder = "Listening...";
+    };
+
+    recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        symptomInput.value = transcript;
+        analyzeSymptoms(); // Auto trigger analysis
+    };
+
+    recognition.onerror = function(event) {
+        console.error('Speech recognition error', event.error);
+        stopRecording();
+        symptomInput.placeholder = "E.g., I have a severe toothache and fever...";
+    };
+
+    recognition.onend = function() {
+        stopRecording();
+    };
+}
+
+function stopRecording() {
+    isRecording = false;
+    if(micBtn) micBtn.classList.remove('listening');
+    symptomInput.placeholder = "E.g., I have a severe toothache and fever...";
+}
+
+if (micBtn) {
+    micBtn.addEventListener('click', () => {
+        if (!recognition) {
+            alert("Sorry, your browser doesn't support speech recognition.");
+            return;
+        }
+
+        if (isRecording) {
+            recognition.stop();
+        } else {
+            // Set language dynamically
+            const lang = (window.getResponseLanguage ? window.getResponseLanguage() : 'en-IN');
+            recognition.lang = lang;
+            recognition.start();
+        }
+    });
+}
 
 if (checkBtn && symptomInput && resultContainer) {
     checkBtn.addEventListener('click', analyzeSymptoms);
@@ -59,7 +148,10 @@ function analyzeSymptoms() {
     const input = symptomInput.value.toLowerCase().trim();
     
     if (!input) {
-        showResult('Please enter your symptoms to get a recommendation.', 'fa-circle-exclamation', 'var(--accent)');
+        const lang = (window.getResponseLanguage ? window.getResponseLanguage() : 'en-IN');
+        const message = getLocalizedString('enterSymptoms', lang);
+        showResult(message, 'fa-circle-exclamation', 'var(--accent)');
+        speakMessage(message, lang);
         return;
     }
 
@@ -172,6 +264,12 @@ function renderPremiumResult(match, score) {
     `;
     
     showResultHTML(htmlContent);
+
+    // Speak the recommendation in the detected/selected language
+    const lang = (window.getResponseLanguage ? window.getResponseLanguage() : 'en-IN');
+    const base = getLocalizedString('recommendation', lang);
+    const speechText = `${base} ${match.specialist} (${match.department}).`;
+    speakMessage(speechText, lang);
     
     // Animate the confidence bar
     setTimeout(() => {
